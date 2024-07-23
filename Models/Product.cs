@@ -19,7 +19,9 @@ namespace GenialNetApplication.Models
 
 
         public UnitMeasurement UnitMeasurement { get; set; }
-        public decimal Price { get; set; }
+        public decimal Price { get; set; } 
+
+        public int SuplierId { get; set; }
 
         
     }

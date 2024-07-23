@@ -17,6 +17,6 @@ namespace GenialNetApplication.Models
         public string PhoneNumber { get; set; }
 
         public string CNPJ { get; set; }
-        public int ProductId { get; set; }
+       // public int ProductId { get; set; }
     }
 }

@@ -20,10 +20,13 @@ namespace GenialNetApplication.Settings
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Supplier>()
-                .HasOne<Product>()
+
+
+            modelBuilder.Entity<Product>()
+                .HasOne<Supplier>()
                 .WithMany()
-                .HasForeignKey(o => o.ProductId);
+                .HasForeignKey(o => o.SuplierId);
+
         }
     }
 }
