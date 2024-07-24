@@ -29,131 +29,147 @@ namespace GenialNetApplication.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.bntListProducts = new System.Windows.Forms.Button();
-            this.btnRegisterSupplier = new System.Windows.Forms.Button();
-            this.bntRegisterProd = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelTitle = new System.Windows.Forms.Panel();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.panelDesktopPane = new System.Windows.Forms.Panel();
-            this.panelMenu.SuspendLayout();
-            this.panelTitle.SuspendLayout();
-            this.SuspendLayout();
+            panelMenu = new System.Windows.Forms.Panel();
+            btnConfig = new System.Windows.Forms.Button();
+            bntListProducts = new System.Windows.Forms.Button();
+            btnRegisterSupplier = new System.Windows.Forms.Button();
+            bntRegisterProd = new System.Windows.Forms.Button();
+            panelLogo = new System.Windows.Forms.Panel();
+            panelTitle = new System.Windows.Forms.Panel();
+            labelTitle = new System.Windows.Forms.Label();
+            panelDesktopPane = new System.Windows.Forms.Panel();
+            panelMenu.SuspendLayout();
+            panelTitle.SuspendLayout();
+            SuspendLayout();
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.bntListProducts);
-            this.panelMenu.Controls.Add(this.btnRegisterSupplier);
-            this.panelMenu.Controls.Add(this.bntRegisterProd);
-            this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 450);
-            this.panelMenu.TabIndex = 0;
+            panelMenu.BackColor = System.Drawing.Color.FromArgb(51, 51, 76);
+            panelMenu.Controls.Add(btnConfig);
+            panelMenu.Controls.Add(bntListProducts);
+            panelMenu.Controls.Add(btnRegisterSupplier);
+            panelMenu.Controls.Add(bntRegisterProd);
+            panelMenu.Controls.Add(panelLogo);
+            panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            panelMenu.Location = new System.Drawing.Point(0, 0);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new System.Drawing.Size(220, 495);
+            panelMenu.TabIndex = 0;
+            // 
+            // btnConfig
+            // 
+            btnConfig.Dock = System.Windows.Forms.DockStyle.Top;
+            btnConfig.FlatAppearance.BorderSize = 0;
+            btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnConfig.ForeColor = System.Drawing.SystemColors.HighlightText;
+            btnConfig.Location = new System.Drawing.Point(0, 260);
+            btnConfig.Name = "btnConfig";
+            btnConfig.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            btnConfig.Size = new System.Drawing.Size(220, 60);
+            btnConfig.TabIndex = 4;
+            btnConfig.Text = "Configurações";
+            btnConfig.UseVisualStyleBackColor = true;
+            btnConfig.Click += btnConfig_Click;
             // 
             // bntListProducts
             // 
-            this.bntListProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bntListProducts.FlatAppearance.BorderSize = 0;
-            this.bntListProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntListProducts.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.bntListProducts.Location = new System.Drawing.Point(0, 200);
-            this.bntListProducts.Name = "bntListProducts";
-            this.bntListProducts.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.bntListProducts.Size = new System.Drawing.Size(220, 60);
-            this.bntListProducts.TabIndex = 3;
-            this.bntListProducts.Text = "Lista de produtos";
-            this.bntListProducts.UseVisualStyleBackColor = true;
-            this.bntListProducts.Click += new System.EventHandler(this.bntListProducts_Click);
+            bntListProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            bntListProducts.FlatAppearance.BorderSize = 0;
+            bntListProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            bntListProducts.ForeColor = System.Drawing.SystemColors.HighlightText;
+            bntListProducts.Location = new System.Drawing.Point(0, 200);
+            bntListProducts.Name = "bntListProducts";
+            bntListProducts.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            bntListProducts.Size = new System.Drawing.Size(220, 60);
+            bntListProducts.TabIndex = 3;
+            bntListProducts.Text = "Lista de produtos";
+            bntListProducts.UseVisualStyleBackColor = true;
+            bntListProducts.Click += bntListProducts_Click;
             // 
             // btnRegisterSupplier
             // 
-            this.btnRegisterSupplier.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegisterSupplier.FlatAppearance.BorderSize = 0;
-            this.btnRegisterSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegisterSupplier.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnRegisterSupplier.Location = new System.Drawing.Point(0, 140);
-            this.btnRegisterSupplier.Name = "btnRegisterSupplier";
-            this.btnRegisterSupplier.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnRegisterSupplier.Size = new System.Drawing.Size(220, 60);
-            this.btnRegisterSupplier.TabIndex = 2;
-            this.btnRegisterSupplier.Text = "Cadastro de fornecedores";
-            this.btnRegisterSupplier.UseVisualStyleBackColor = true;
-            this.btnRegisterSupplier.Click += new System.EventHandler(this.btnRegisterSupplier_Click);
+            btnRegisterSupplier.Dock = System.Windows.Forms.DockStyle.Top;
+            btnRegisterSupplier.FlatAppearance.BorderSize = 0;
+            btnRegisterSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnRegisterSupplier.ForeColor = System.Drawing.SystemColors.HighlightText;
+            btnRegisterSupplier.Location = new System.Drawing.Point(0, 140);
+            btnRegisterSupplier.Name = "btnRegisterSupplier";
+            btnRegisterSupplier.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            btnRegisterSupplier.Size = new System.Drawing.Size(220, 60);
+            btnRegisterSupplier.TabIndex = 2;
+            btnRegisterSupplier.Text = "Cadastro de fornecedores";
+            btnRegisterSupplier.UseVisualStyleBackColor = true;
+            btnRegisterSupplier.Click += btnRegisterSupplier_Click;
             // 
             // bntRegisterProd
             // 
-            this.bntRegisterProd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bntRegisterProd.FlatAppearance.BorderSize = 0;
-            this.bntRegisterProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntRegisterProd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.bntRegisterProd.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.bntRegisterProd.Location = new System.Drawing.Point(0, 80);
-            this.bntRegisterProd.Name = "bntRegisterProd";
-            this.bntRegisterProd.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.bntRegisterProd.Size = new System.Drawing.Size(220, 60);
-            this.bntRegisterProd.TabIndex = 1;
-            this.bntRegisterProd.Text = "Cadastro de produtos";
-            this.bntRegisterProd.UseVisualStyleBackColor = true;
-            this.bntRegisterProd.Click += new System.EventHandler(this.bntRegisterProd_Click);
+            bntRegisterProd.Dock = System.Windows.Forms.DockStyle.Top;
+            bntRegisterProd.FlatAppearance.BorderSize = 0;
+            bntRegisterProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            bntRegisterProd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            bntRegisterProd.ForeColor = System.Drawing.SystemColors.HighlightText;
+            bntRegisterProd.Location = new System.Drawing.Point(0, 80);
+            bntRegisterProd.Name = "bntRegisterProd";
+            bntRegisterProd.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            bntRegisterProd.Size = new System.Drawing.Size(220, 60);
+            bntRegisterProd.TabIndex = 1;
+            bntRegisterProd.Text = "Cadastro de produtos";
+            bntRegisterProd.UseVisualStyleBackColor = true;
+            bntRegisterProd.Click += bntRegisterProd_Click;
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(220, 80);
-            this.panelLogo.TabIndex = 0;
+            panelLogo.BackColor = System.Drawing.Color.FromArgb(39, 39, 58);
+            panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            panelLogo.Location = new System.Drawing.Point(0, 0);
+            panelLogo.Name = "panelLogo";
+            panelLogo.Size = new System.Drawing.Size(220, 80);
+            panelLogo.TabIndex = 0;
             // 
             // panelTitle
             // 
-            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelTitle.Controls.Add(this.labelTitle);
-            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(220, 0);
-            this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(580, 80);
-            this.panelTitle.TabIndex = 1;
+            panelTitle.BackColor = System.Drawing.Color.FromArgb(39, 39, 58);
+            panelTitle.Controls.Add(labelTitle);
+            panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            panelTitle.Location = new System.Drawing.Point(220, 0);
+            panelTitle.Name = "panelTitle";
+            panelTitle.Size = new System.Drawing.Size(643, 80);
+            panelTitle.TabIndex = 1;
             // 
             // labelTitle
             // 
-            this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(237, 31);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(75, 25);
-            this.labelTitle.TabIndex = 0;
-            this.labelTitle.Text = "HOME";
+            labelTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            labelTitle.ForeColor = System.Drawing.Color.White;
+            labelTitle.Location = new System.Drawing.Point(268, 31);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new System.Drawing.Size(75, 25);
+            labelTitle.TabIndex = 0;
+            labelTitle.Text = "HOME";
             // 
             // panelDesktopPane
             // 
-            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.Location = new System.Drawing.Point(220, 80);
-            this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(580, 370);
-            this.panelDesktopPane.TabIndex = 2;
+            panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelDesktopPane.Location = new System.Drawing.Point(220, 80);
+            panelDesktopPane.Name = "panelDesktopPane";
+            panelDesktopPane.Size = new System.Drawing.Size(643, 415);
+            panelDesktopPane.TabIndex = 2;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panelDesktopPane);
-            this.Controls.Add(this.panelTitle);
-            this.Controls.Add(this.panelMenu);
-            this.Name = "Main";
-            this.Text = "Main";
-            this.panelMenu.ResumeLayout(false);
-            this.panelTitle.ResumeLayout(false);
-            this.panelTitle.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(863, 495);
+            Controls.Add(panelDesktopPane);
+            Controls.Add(panelTitle);
+            Controls.Add(panelMenu);
+            Name = "Main";
+            Text = "Main";
+            panelMenu.ResumeLayout(false);
+            panelTitle.ResumeLayout(false);
+            panelTitle.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -166,5 +182,6 @@ namespace GenialNetApplication.Forms
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Panel panelDesktopPane;
+        private System.Windows.Forms.Button btnConfig;
     }
 }

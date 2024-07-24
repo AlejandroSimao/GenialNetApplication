@@ -28,7 +28,7 @@ namespace GenialNetApplication.Forms
 
             while (tempIndex == index)
             {
-               index =  random.Next(ThemeColor.ColorList.Count);
+                index = random.Next(ThemeColor.ColorList.Count);
             }
 
             tempIndex = index;
@@ -38,7 +38,7 @@ namespace GenialNetApplication.Forms
 
         private void ActiveButton(object sender)
         {
-            if(sender != null)
+            if (sender != null)
             {
                 if (currentButton != (Button)sender)
                 {
@@ -58,9 +58,9 @@ namespace GenialNetApplication.Forms
         {
             foreach (Control previousBtn in panelMenu.Controls)
             {
-                if(previousBtn.GetType() == typeof(Button))
-                {                   
-                   
+                if (previousBtn.GetType() == typeof(Button))
+                {
+
                     previousBtn.BackColor = Color.FromArgb(51, 51, 76);
                     previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -68,9 +68,9 @@ namespace GenialNetApplication.Forms
             }
         }
 
-        private void OpenChildForm(Form childForm,object btnSender)
+        private void OpenChildForm(Form childForm, object btnSender)
         {
-            if(activeForm != null)
+            if (activeForm != null)
             {
                 activeForm.Close();
             }
@@ -93,12 +93,18 @@ namespace GenialNetApplication.Forms
 
         private void btnRegisterSupplier_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.RegisterSupplier(),sender);
+            OpenChildForm(new Forms.RegisterSupplier(), sender);
         }
 
         private void bntListProducts_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.Main(),sender);
+            OpenChildForm(new Forms.ListProductsinSupplier(), sender);
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+
+            OpenChildForm(new Forms.Form1(), sender);
         }
     }
 }

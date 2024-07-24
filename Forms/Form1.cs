@@ -1,4 +1,5 @@
-﻿using GenialNetApplication.Settings.Models;
+﻿using GenialNetApplication.Settings;
+using GenialNetApplication.Settings.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,36 @@ namespace GenialNetApplication.Forms
         public Form1()
         {
             InitializeComponent();
-            IsVisibleFalse();
+            
+            IsExistPreference();
+        }
+
+        private void IsExistPreference()
+        {
+            var Entity = PreferencesDb.GetConnectionModels();
+            if (Entity != null) 
+            { 
+                if(!string.IsNullOrEmpty(Entity.UserID) || !string.IsNullOrEmpty(Entity.Password))
+                {
+                    
+                    label2.Visible = true;
+                    txtUser.Visible = true;
+                    label4.Visible = true;
+                    txtPassword.Visible = true;
+
+                    txtServer.Text = Entity.InitialCatalog;
+                    txtPassword.Text = Entity.Password;
+                    txtUser.Text = Entity.UserID;
+                }
+                else
+                {
+                    txtServer.Text = Entity.InitialCatalog;
+                }
+            }
+            else
+            {
+                IsVisibleFalse();
+            }
         }
 
         private void rbtnNot_CheckedChanged(object sender, EventArgs e)
