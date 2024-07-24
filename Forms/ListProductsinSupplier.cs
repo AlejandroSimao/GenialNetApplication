@@ -20,6 +20,7 @@ namespace GenialNetApplication.Forms
         public ListProductsinSupplier()
         {
             InitializeComponent();
+            //Carregamento de dados para o combobox
             LoadDataSupplierCombo();
         }
 
@@ -33,11 +34,15 @@ namespace GenialNetApplication.Forms
 
         private async void btnSearch_Click(object sender, EventArgs e)
         {
+            
             int SupplierId = cbxSupplier.SelectedIndex == -1 ? cbxSupplier.SelectedIndex : cbxSupplier.SelectedIndex + 1;
             if (SupplierId > 0)
                 await GetProductsWhithSupplier(SupplierId);
         }
 
+        /*
+         * pesquisa de produtos que pertence ao fornecedor
+         */
         private async Task GetProductsWhithSupplier(int SupplierId)
         {
             using (var context = new ApplicationDbContext())
@@ -58,8 +63,12 @@ namespace GenialNetApplication.Forms
 
                 var result = await query.ToListAsync();
 
+                //definição dos dados do dataSource
                 this.datagridProducts.DataSource = result;
+
+                //escondendo o ID do produto
                 datagridProducts.Columns["ProductId"].Visible = false;
+                //nomeclatura das colunas
                 datagridProducts.Columns["ProductName"].HeaderText = "Nome do produto";
                 datagridProducts.Columns["Price"].HeaderText = "Preço do produto";
                 datagridProducts.Columns["Brand"].HeaderText = "Marca do produto";
@@ -91,6 +100,7 @@ namespace GenialNetApplication.Forms
 
                         var cellId = datagridProducts.Rows[rowIndex].Cells[0].Value;
 
+                        //Atualização de dados do produto
                         var isUpdate = await UpdatesData.UpdateProduct((int)cellId, columnName, retorno);
 
                         if (isUpdate)
@@ -109,10 +119,25 @@ namespace GenialNetApplication.Forms
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        //Remoção de dados do data grid e do banco
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
             int rowIndex = datagridProducts.CurrentCell.RowIndex;
-            datagridProducts.Rows.RemoveAt(rowIndex);
+            var cellId = datagridProducts.Rows[rowIndex].Cells[0].Value;
+
+            using (var context = new ApplicationDbContext())
+            {
+                var product = context.Products.Find(cellId);
+                if (product != null) 
+                {
+                    context.Products.Remove(product);
+                    context.SaveChanges();
+                }
+                int SupplierId = cbxSupplier.SelectedIndex == -1 ? cbxSupplier.SelectedIndex : cbxSupplier.SelectedIndex + 1;
+                if (SupplierId > 0)
+                    await GetProductsWhithSupplier(SupplierId);
+
+            }
         }
     }
 }

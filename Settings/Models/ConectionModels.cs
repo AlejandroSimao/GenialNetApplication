@@ -31,6 +31,7 @@ namespace GenialNetApplication.Settings.Models
 
         public bool IsConnection(string connection)
         {
+            //Verificar se o banco de dados existe
             var iscreateBd = EnsureDatabaseExists(connection, DataSource);
             if (iscreateBd)
             {
@@ -74,6 +75,7 @@ namespace GenialNetApplication.Settings.Models
                         var result = command.ExecuteScalar();
                         if (result == null)
                         {
+                            //Criação do banco de dados
                             string createDbQuery = $"CREATE DATABASE [{databaseName}]";
                             using (var createCommand = new SqlCommand(createDbQuery, connection))
                             {

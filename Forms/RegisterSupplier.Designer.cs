@@ -70,9 +70,11 @@ namespace GenialNetApplication.Forms
             // txtCpnj
             // 
             txtCpnj.Location = new System.Drawing.Point(196, 82);
+            txtCpnj.MaxLength = 14;
             txtCpnj.Name = "txtCpnj";
             txtCpnj.Size = new System.Drawing.Size(196, 23);
             txtCpnj.TabIndex = 3;
+            txtCpnj.TextChanged += txtCpnj_TextChanged;
             txtCpnj.KeyPress += txtCpnj_KeyPress;
             // 
             // txtCEP
@@ -97,9 +99,11 @@ namespace GenialNetApplication.Forms
             // txtPhone
             // 
             txtPhone.Location = new System.Drawing.Point(196, 111);
+            txtPhone.MaxLength = 17;
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new System.Drawing.Size(196, 23);
             txtPhone.TabIndex = 5;
+            txtPhone.TextChanged += txtPhone_TextChanged;
             txtPhone.KeyPress += txtPhone_KeyPress;
             // 
             // label4

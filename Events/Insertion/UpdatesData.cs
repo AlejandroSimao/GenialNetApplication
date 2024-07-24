@@ -13,6 +13,9 @@ namespace GenialNetApplication.Events.Insertion
 {
     public class UpdatesData
     {
+        /*
+         * Atualização do produto
+         */
         public async static Task<bool> UpdateProduct(int id,string columnName, string newvalue)
         {
             try

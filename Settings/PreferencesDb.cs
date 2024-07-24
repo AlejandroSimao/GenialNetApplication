@@ -13,12 +13,15 @@ namespace GenialNetApplication.Settings
     public class PreferencesDb
     {
         private static readonly string _key= "configuration.db";
+
+        //Salvar as preferências no arquivo tempórario
         public static void SetPreferenceBD(ConectionModels conectionModels)
         {           
             var preferenceJson = JsonConvert.SerializeObject(conectionModels, Formatting.Indented);
             File.WriteAllText(_key, preferenceJson);           
         }
 
+        //Pesquisa no arquivo tempórario
         public static ConectionModels GetConnectionModels()
         {
             if (File.Exists(_key))

@@ -18,6 +18,7 @@ namespace GenialNetApplication.Forms
         {
             InitializeComponent();
             
+            //Verificação se existe ou não as preferências
             IsExistPreference();
         }
 
@@ -62,6 +63,10 @@ namespace GenialNetApplication.Forms
             txtPassword.Visible = true;
         }
 
+        /* 
+         *  desabilitar campos do formulário
+         */
+        
         private void IsVisibleFalse()
         {
             label2.Visible = false;
@@ -70,6 +75,9 @@ namespace GenialNetApplication.Forms
             txtPassword.Visible = false;
         }
 
+        /*
+         * Conexão com o banco de dados
+         */
         private void btnConect_Click(object sender, EventArgs e)
         {
             Validation(txtServer.Text, txtUser.Text, txtPassword.Text);

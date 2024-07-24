@@ -13,6 +13,9 @@ namespace GenialNetApplication.Events.Searchs
 {
     public class SearchData
     {
+        /* Busca se existe ou não o fornecedor pelo CNPJ
+         * 
+         */
         public async static Task<bool> IsExistSupplierCPNJ(string CNPJ)
         {
             try
@@ -39,6 +42,9 @@ namespace GenialNetApplication.Events.Searchs
             
         }
 
+        /*
+         * Busca de todos os fornecedores
+         */
         public static IEnumerable<Supplier> GetSupplier()
         {
             using (var context = new ApplicationDbContext())
@@ -48,6 +54,9 @@ namespace GenialNetApplication.Events.Searchs
             }
         }
 
+        /*
+         * Busca se existe o produto
+         */
         public async static Task<bool> IsExistProduct(Product product)
         {
             try

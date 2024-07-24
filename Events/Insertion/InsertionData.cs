@@ -12,6 +12,9 @@ namespace GenialNetApplication.Events.Insertion
 {
     public class InsertionData
     {
+        /*
+         * Inserção no banco de dados do fornecedor
+         */
         public async static Task<bool> InsertDataSupplier(Supplier supplier)
         {
             try
@@ -41,6 +44,10 @@ namespace GenialNetApplication.Events.Insertion
             }
          
         }
+
+        /*
+         * Inserção no banco de dados do produto
+         */
         public async static Task<bool> InsertDataProduct(Product product)
         {
             try

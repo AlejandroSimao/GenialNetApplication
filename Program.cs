@@ -19,6 +19,7 @@ namespace GenialNetApplication
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //Pesquisa se existe ou não as configurações de prefêrencias do banco de dados
             var Entity = PreferencesDb.GetConnectionModels();
             if (Entity == null)
                 Application.Run(new Form1());

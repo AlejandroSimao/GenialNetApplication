@@ -19,6 +19,5 @@ namespace GenialNetApplication.Models
         public string CNPJ { get; set; }
 
         public string CEP { get; set; }
-       // public int ProductId { get; set; }
     }
 }

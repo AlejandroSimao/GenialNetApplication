@@ -1,6 +1,6 @@
 ﻿using GenialNetApplication.Events.Insertion;
 using GenialNetApplication.Events.Searchs;
-using GenialNetApplication.Events.Validations.Supplier;
+using GenialNetApplication.Events.Validations;
 using GenialNetApplication.Models;
 using GenialNetApplication.Models.Enums;
 using GenialNetApplication.Settings;
@@ -35,6 +35,7 @@ namespace GenialNetApplication.Forms
             decimal PriceProduct = Convert.ToDecimal(textBox1.Text ?? "0");
             int SupplierId = cbxSuppiler.SelectedIndex == -1 ? cbxSuppiler.SelectedIndex : cbxSuppiler.SelectedIndex  + 1;
             var unit = cbxUnit.SelectedIndex;
+            
             var isValid = DataValidation.IsValidProduct(productName, BrandProduct, DescriptionProduct, PriceProduct, SupplierId);
 
             if (isValid)
@@ -46,7 +47,7 @@ namespace GenialNetApplication.Forms
                 product.Price = PriceProduct;
                 product.UnitMeasurement = (UnitMeasurement)unit;
                 product.SuplierId = SupplierId;
-
+                //Inserção de dados no banco de dados
                 var retorno = await InsertionData.InsertDataProduct(product);
                 if (retorno)
                 {
