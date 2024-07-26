@@ -87,7 +87,26 @@ namespace GenialNetApplication.Forms
             if(!string.IsNullOrEmpty(txtUser.Text) && !string.IsNullOrEmpty(txtPassword.Text))
             {
                 ConectionModels conectionModels = new ConectionModels(txtUser.Text, txtPassword.Text, txtServer.Text);
+                //string de conexão
                 connectionString = $"Data Source={txtServer.Text};Persist Security Info=True;User ID={txtUser.Text};Password={txtPassword.Text};TrustServerCertificate=True";
+                var isConnection = conectionModels.IsConnection(connectionString);
+                if (isConnection)
+                {
+                    Main listProducts = new Main();
+                    listProducts.Show();
+                    Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Os dados informados não estão corretos");
+                }
+            }
+            else
+            {
+
+                ConectionModels conectionModels = new ConectionModels(txtUser.Text, txtPassword.Text, txtServer.Text);
+                //string de conexão
+                connectionString = $"Data Source={txtServer.Text};Persist Security Info=True;TrustServerCertificate=True";
                 var isConnection = conectionModels.IsConnection(connectionString);
                 if (isConnection)
                 {
